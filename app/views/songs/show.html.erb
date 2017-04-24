@@ -1,0 +1,22 @@
+<div>
+	</br>
+	<p id="notice"><%= notice %></p>
+
+	<p class="green">
+	  <strong>Name:</strong>
+	  <%= @song.name %>
+	</p>
+	<br>
+
+	<p>
+	  <strong>Artist Name:</strong>
+	  <%= @song.artist %>
+	</p>
+	<br>
+
+	<iframe src="https://embed.spotify.com/?uri=<%=@song.spotify_uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>
+
+	<footer>
+		<%= link_to 'Back', "/playlists/#{params[:playlist_id]}" %>
+	</footer>
+</div>

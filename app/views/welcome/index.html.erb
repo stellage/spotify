@@ -1,0 +1,7 @@
+<h1 id="title">S P O T I F Y</h1>
+<%= image_tag('spotify-logo.png', :class => "logo") %>
+<br>
+<% unless logged_in? %>
+  <%= link_to 'Log in', '/login', class: "home-btn" %>
+  <%= link_to 'Sign up', '/users/new', class: "home-btn" %>
+<% end %>

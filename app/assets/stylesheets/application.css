@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: 'ralewayLight';
+  src:url('Raleway-Light.eot');
+  src:url('Raleway-Light.ttf');
+}
+
+@font-face {
+  font-family: 'ralewayMedium';
+  src:url('Raleway-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ralewayBold';
+  src:url('Raleway-Bold.eot');
+  src:url('Raleway-Bold.ttf');
+}
+
+body {
+	font-family: 'ralewayMedium';
+}
+
+#title {
+	font-family: 'ralewayBold';
+  color: #90EE90; 
+  width: 370px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 3px #90EE90 solid;
+}
+
+.nav-banner {
+	text-align: center;
+	font-family: 'ralewayMedium';
+}
+
+.nav-btn {
+    color: white;
+    margin-right: 20px;
+}
+
+.home-btn {
+	font-family: 'ralewayMedium';
+}
+
+.user-info {
+	font-family: 'ralewayMedium';
+}
+
+h1 {
+	font-family: 'ralewayBold';
+}
+
+th {
+	font-family: 'ralewayBold';
+}
+
+table {
+	margin: 0 auto;
+}
+
+.green {
+  color: #90EE90;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 50px;
+}

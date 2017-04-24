@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<h1 class="green"> Playlist: <%= @playlist.name %> </h1>
+
+<h2> Playlist Owners: </h2>
+<% @playlist.users.each do |owner| %>
+  <tr>
+    <td><%= owner.name %></td>
+  </tr>
+  <br>
+<% end %>
+<br>
+
+<h2> Songs in Playlist </h2>
+<% @playlist.songs.each do |song| %>
+  <tr>
+  	<td><%= song.name %> by <%= song.artist %></td>
+  	<td><%= link_to 'Play', "/playlists/#{@playlist.id}/songs/#{song.id}" %></td>
+  	<td><%= link_to 'Delete', "/playlists/#{@playlist.id}/songs/#{song.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  	<br>
+  </tr>
+<% end %>
+
+<h4> <%= link_to 'Add song to playlist', "/playlists/#{@playlist.id}/songs/new"%> </h4>
