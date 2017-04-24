@@ -16,6 +16,16 @@
 
 	<iframe src="https://embed.spotify.com/?uri=<%=@song.spotify_uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>
 
+	<h2>Playlists Containing This Song</h2>
+	<% Playlist.all.each do |playlist| %>
+      <% playlist.songs.each do |s| %>
+        <% if s.name.eql? @song.name %>
+          <%= playlist.name %>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+
 	<footer>
 		<%= link_to 'Back', "/playlists/#{params[:playlist_id]}" %>
 	</footer>
