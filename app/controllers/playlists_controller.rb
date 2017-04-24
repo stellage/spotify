@@ -39,11 +39,7 @@ class PlaylistsController < ApplicationController
   def add_user
     @playlist = Playlist.find(params[:id])
     @playlist.users << current_user
-    p "PLAYLISTS BEFORE"
-    p current_user.playlists
     current_user.playlists << @playlist
-    p "PLAYLISTS AFTER"
-    p current_user.playlists
     redirect_to "/playlists/#{@playlist.id}"
   end
 
