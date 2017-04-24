@@ -33,7 +33,7 @@ class PlaylistsController < ApplicationController
 
   def destroy
     Playlist.find(params[:id]).destroy
-    redirect_to "/users/#{params[:id]}", notice: 'playlist was successfully destroyed.'
+    redirect_to current_user, notice: 'playlist was successfully destroyed.'
   end
 
   def add_user

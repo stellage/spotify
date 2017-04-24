@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :playlists
+  belongs_to :playlist
   validates :name, presence: :true, uniqueness: true, length: { minimum: 2 }
 
   def password

@@ -2,8 +2,7 @@
 <h1 class="green"><%= @user.name %></h1>
 <h3>Playlists</h3>
 <% Playlist.all.each do |playlist| %>
-  <br>
-  <% if playlist.users.include? @user %>
+  <% if (playlist.users.include? @user) || (@user.playlists.include? playlist) %>
     <tr>
       <td><%= playlist.name %></td>
       <% if @user ==  current_user %>
