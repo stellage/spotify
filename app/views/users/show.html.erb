@@ -1,17 +1,20 @@
 <p id="notice"><%= notice %></p>
 <h1 class="green"><%= @user.name %></h1>
 <h3>Playlists</h3>
-<% @user.playlists.each do |playlist| %>
-  <tr>
-    <td><%= playlist.name %></td>
-    <% if @user ==  current_user %>
-      <td><%= link_to 'Show', "/playlists/#{playlist.id}" %></td>
-      <td><%= link_to 'Delete', "/playlists/#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% else %>
-      <td><%= link_to 'Join Playlist', "/playlists/#{playlist.id}", method: :post %></td>
-    <% end %>
-    <br>
-  </tr>
+<% Playlist.all.each do |playlist| %>
+  <br>
+  <% if playlist.users.include? @user %>
+    <tr>
+      <td><%= playlist.name %></td>
+      <% if @user ==  current_user %>
+        <td><%= link_to 'Show', "/playlists/#{playlist.id}" %></td>
+        <td><%= link_to 'Delete', "/playlists/#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% else %>
+        <td><%= link_to 'Join Playlist', "/playlists/#{playlist.id}", method: :post %></td>
+      <% end %>
+      <br>
+    </tr>
+  <% end %>
 <% end %>
 <br>
 <br>
