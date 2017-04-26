@@ -5,8 +5,8 @@
   <% if (playlist.users.include? @user) || (@user.playlists.include? playlist) %>
     <tr>
       <td><%= playlist.name %></td>
+      <td><%= link_to 'Show', "/playlists/#{playlist.id}" %></td>
       <% if @user ==  current_user %>
-        <td><%= link_to 'Show', "/playlists/#{playlist.id}" %></td>
         <td><%= link_to 'Delete', "/playlists/#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% else %>
         <td><%= link_to 'Join Playlist', "/playlists/#{playlist.id}", method: :post %></td>
@@ -19,7 +19,7 @@
 <br>
 <% if logged_in? && @user == current_user %>
   <%= link_to 'New Playlist |', new_playlist_path(@user.id) %>
-  <%= link_to 'Edit |', edit_user_path(@user) %>
+  <%= link_to 'Edit User |', edit_user_path(@user) %>
   <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 

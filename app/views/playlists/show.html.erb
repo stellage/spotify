@@ -20,4 +20,6 @@
   </tr>
 <% end %>
 
-<h4> <%= link_to 'Add song to playlist', "/playlists/#{@playlist.id}/songs/new"%> </h4>
+<% if @playlist.users.include? current_user %>
+  <h4> <%= link_to 'Add song to playlist', "/playlists/#{@playlist.id}/songs/new"%> </h4>
+<% end %>
