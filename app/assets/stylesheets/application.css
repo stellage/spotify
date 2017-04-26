@@ -52,6 +52,7 @@ body {
 .nav-btn {
     color: white;
     margin-right: 20px;
+    font-size: 20px;
 }
 
 .home-btn {
@@ -82,4 +83,12 @@ table {
   height: 150px;
   width: 150px;
   margin-bottom: 50px;
+}
+
+#bio {
+  color: #90EE90;
+}
+
+.user-btn {
+  font-family: 'ralewayBold';
 }
