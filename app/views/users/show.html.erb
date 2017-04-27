@@ -9,7 +9,8 @@
       <td><%= link_to 'Show', "/playlists/#{playlist.id}" %></td>
       <% if @user ==  current_user %>
         <td><%= link_to 'Delete', "/playlists/#{playlist.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% else %>
+      <% end %>
+      <% if logged_in? %>
         <td><%= link_to 'Join Playlist', "/playlists/#{playlist.id}", method: :post %></td>
       <% end %>
       <br>
