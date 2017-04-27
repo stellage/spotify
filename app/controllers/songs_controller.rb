@@ -12,13 +12,12 @@ class SongsController < ApplicationController
       @song.playlist.songs << @song
       redirect_to "/playlists/#{params[:playlist_id]}"
     else
-      p "WAS NOT IN SPOTIFY"
       redirect_to new_playlist_song_path, notice: 'song was not in spotify'
     end
   end
 
   def show
-  	@song = Song.find(params[:id])
+    @song = Song.find(params[:id])
   end
 
   def destroy

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resources :songs, only: [:index, :new, :show, :create, :destroy]
   end
 
-
   root 'welcome#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
