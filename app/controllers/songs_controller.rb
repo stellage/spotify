@@ -7,9 +7,9 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(name: song_params[:name], artist: song_params[:artist])
     @song.playlist = Playlist.find(params[:playlist_id])
-    @song.playlist.songs << @song
     if @song.in_spotify?
       @song.save
+      @song.playlist.songs << @song
       redirect_to "/playlists/#{params[:playlist_id]}"
     else
       p "WAS NOT IN SPOTIFY"
