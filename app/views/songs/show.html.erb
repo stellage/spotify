@@ -2,21 +2,20 @@
 	</br>
 	<p id="notice"><%= notice %></p>
 
-	<p class="green">
-	  <strong>Name:</strong>
+	<h2 class="green">
+	  <strong>Song:</strong>
 	  <%= @song.name %>
-	</p>
-	<br>
+	</h2>
 
-	<p>
-	  <strong>Artist Name:</strong>
+	<h2>
+	  <strong>Artist:</strong>
 	  <%= @song.artist %>
-	</p>
+	</h2>
 	<br>
 
 	<iframe src="https://embed.spotify.com/?uri=<%=@song.spotify_uri%>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>
 
-	<h2>Playlists Containing This Song</h2>
+	<h3>Playlists Containing This Song:</h3>
 	<% Playlist.all.each do |playlist| %>
       <% playlist.songs.each do |s| %>
         <% if s.name.eql? @song.name %>
@@ -25,6 +24,7 @@
         <% end %>
       <% end %>
     <% end %>
+    <br>
 
 	<footer>
 		<%= link_to 'Back', "/playlists/#{params[:playlist_id]}" %>
